@@ -1,0 +1,95 @@
+.slide {
+    height: 700px;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.slide-list {
+    display:flex;
+    height: 100%;
+    transition: 0.5s;
+
+    /* transform: translateX(-100%); */
+    /* 클릭했을 때 100씩 더해줌 */
+}
+
+.slide-list li {
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0; /* ? 상위요소가 flex여야지만 가능하다. */
+    font-size: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+}
+
+.slide-list li:first-of-type {
+    background-color: rgb(90, 243, 35);
+}
+
+.slide-list li:nth-of-type(2) {
+    background-color: orange;
+}
+.slide-list li:nth-of-type(3) {
+    background-color: rgb(217, 126, 126);
+} 
+.slide-list li:nth-of-type(4) {
+    background-color: rgb(73, 136, 208);
+} 
+
+.slide-list li:last-of-type {
+    background-color: blueviolet;
+}
+
+
+.arrows button:first-of-type {
+    position:absolute;
+    left: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+.arrows button:last-of-type {
+    position:absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+
+.arrows i {
+    font-size: 48px;
+    color: #fff;
+    pointer-events: none; /* click이 안됨 선택이 안됨 i태그 인식 안되게  */
+}
+
+button.disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.pagination {
+    display:flex;
+    position:absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.pagination li {
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #aaa;
+   
+}
+.pagination li.active {
+    background-color: #fff;
+}
+.pagination li + li {
+    margin-left: 10px;
+}
